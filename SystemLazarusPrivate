@@ -176,7 +176,9 @@ local cmd104 = "mortal"
 local cmd105 = "offatk unatk noatk"
 local cmd106 = "rainbowgm rgm"
 local cmd107 = "randomclothes"
-local cmd108 = "offrandomclothes norandomclothes unrandomclothes"
+local cmd108 = "randomaccessory"
+local cmd109 = "randomall"
+local cmd110 = "offrandomall norandomall unrandomall"
 ]]--
 
 -- loadstring(game:HttpGet('https://raw.githubusercontent.com/LazarTM/PrintCMDS/main/PrintLazarusCMDS'))() --
@@ -5031,25 +5033,1000 @@ function RandomClothes2()
     })
 end
 Player.Chatted:connect(function(cht)
-    if cht:match(prefix.."randomclothes") or cht:match(prefix.."rc") then
+    if cht:match(prefix.."randomclothes") then
         RandomClothes1()
         RandomClothes2()
+    end
+end)
+
+function RandomAccessory1()
+-- Settings
+RandomAccessory = true
+
+-- Loading
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end;
+repeat
+    game:GetService("RunService").RenderStepped:Wait();
+until game.Players.LocalPlayer;
+
+-- Variables
+local HUD = game.Players.LocalPlayer.PlayerGui.HUD
+local Bottom = HUD.Bottom
+local ServerTraits = game.Players.LocalPlayer.Backpack.ServerTraits
+local LoadClothes = ServerTraits.LoadClothes
+local AccEquip = ServerTraits.AccEquip
+local ScrollingFrame = HUD.ScrollingFrame
+
+if RandomAccessory then
+-- Enable And Hide Guis
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Accessory")}
+LoadClothes:FireServer(unpack(args))
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Accessory2")}
+LoadClothes:FireServer(unpack(args))
+repeat wait() until HUD:FindFirstChild("ScrollingFrame")
+wait(2)
+ScrollingFrame.Visible = false
+
+-- Cloths Name Changer
+for i,v in pairs(ScrollingFrame:GetDescendants()) do
+    -- All Pants
+    if v.Name == 'Accessory' then
+        if v.Text == "Black Headband" then
+            v.Name = "1".."Accessory"
+        elseif v.Text == "Paper Hat" then
+            v.Name = "2".."Accessory"
+        elseif v.Text == "Bunny Accessory" then
+            v.Name = "3".."Accessory"
+        elseif v.Text == "Great Detective Cape" then
+            v.Name = "4".."Accessory"
+        elseif v.Text == "Tail" then
+            v.Name = "5".."Accessory"
+        elseif v.Text == "Punk Kid" then
+            v.Name = "6".."Accessory"
+        elseif v.Text == "PiccoloCape" then
+            v.Name = "7".."Accessory"
+        elseif v.Text == "Gray Assassin" then
+            v.Name = "8".."Accessory"
+        elseif v.Text == "TurtleShell" then
+            v.Name = "9".."Accessory"
+        elseif v.Text == "StrawHat" then
+            v.Name = "10".."Accessory"
+        elseif v.Text == "Snowflake Cloak" then
+            v.Name = "11".."Accessory"
+        elseif v.Text == "White Headband" then
+            v.Name = "11".."Accessory"
+        elseif v.Text == "Midnight Rider Shades" then
+            v.Name = "12".."Accessory"
+        elseif v.Text == "Great Detective Fedora" then
+            v.Name = "13".."Accessory"
+        elseif v.Text == "Nomadic Steampunk Headband" then
+            v.Name = "14".."Accessory"
+        elseif v.Text == "PiccoloHat" then
+            v.Name = "15".."Accessory"
+        elseif v.Text == "Sleek Glasses" then
+            v.Name = "16".."Accessory"
+        elseif v.Text == "Evil Aura" then
+            v.Name = "17".."Accessory"
+        elseif v.Text == "Grn Scouter" then
+            v.Name = "18".."Accessory"
+        elseif v.Text == "WhiteChillCap" then
+            v.Name = "19".."Accessory"
+        elseif v.Text == "Ylw Scouter" then
+            v.Name = "20".."Accessory"
+        elseif v.Text == "TopHat" then
+            v.Name = "21".."Accessory"
+        elseif v.Text == "Epic Glasses" then
+            v.Name = "22".."Accessory"
+        elseif v.Text == "Valkyrie Helm" then
+            v.Name = "23".."Accessory"
+        elseif v.Text == "Fedora" then
+            v.Name = "24".."Accessory"
+        elseif v.Text == "Floating  White Crown" then
+            v.Name = "25".."Accessory"
+        elseif v.Text == "Red Headband" then
+            v.Name = "26".."Accessory"
+        elseif v.Text == "Blue Scouter" then
+            v.Name = "27".."Accessory"
+        elseif v.Text == "potara" then
+            v.Name = "28".."Accessory"
+        elseif v.Text == "Nerd Glasses" then
+            v.Name = "29".."Accessory"
+        elseif v.Text == "DisguiseScarf" then
+            v.Name = "30".."Accessory"
+        elseif v.Text == "Zamasu Halo" then
+            v.Name = "31".."Accessory"
+        elseif v.Text == "Visor" then
+            v.Name = "32".."Accessory"
+        elseif v.Text == "BigGlasses" then
+            v.Name = "33".."Accessory"
+        elseif v.Text == "Floating Crown" then
+            v.Name = "34".."Accessory"
+        elseif v.Text == "Halo" then
+            v.Name = "35".."Accessory"
+        elseif v.Text == "None" then
+            v.Name = "36".."Accessory"
+        elseif v.Text == "time breaker" then
+            v.Name = "37".."Accessory"
+        elseif v.Text == "Red Scouter" then
+            v.Name = "38".."Accessory"
+        elseif v.Text == "Little Jiren" then
+            v.Name = "39".."Accessory"
+        elseif v.Text == "Round Glasses" then
+            v.Name = "40".."Accessory"
+        elseif v.Text == "Buddy Hat" then
+            v.Name = "41".."Accessory"
+        elseif v.Text == "Ylw Headband" then
+            v.Name = "42".."Accessory"
+        elseif v.Text == "Cool Glasses" then
+            v.Name = "43".."Accessory"
+        elseif v.Text == "Green Headband" then
+            v.Name = "44".."Accessory"
+        elseif v.Text == "Purple Headband" then
+            v.Name = "45".."Accessory"
+        elseif v.Text == "Style Glasses" then
+            v.Name = "46".."Accessory"
+        elseif v.Text == "DisguiseScarf White" then
+            v.Name = "47".."Accessory"
+        end
+    elseif v.Name == 'Accessory2' then
+        if v.Text == "Black Headband" then
+            v.Name = "1".."Accessory2"
+        elseif v.Text == "Paper Hat" then
+            v.Name = "2".."Accessory2"
+        elseif v.Text == "Bunny Accessory" then
+            v.Name = "3".."Accessory2"
+        elseif v.Text == "Great Detective Cape" then
+            v.Name = "4".."Accessory2"
+        elseif v.Text == "Tail" then
+            v.Name = "5".."Accessory2"
+        elseif v.Text == "Punk Kid" then
+            v.Name = "6".."Accessory2"
+        elseif v.Text == "PiccoloCape" then
+            v.Name = "7".."Accessory2"
+        elseif v.Text == "Gray Assassin" then
+            v.Name = "8".."Accessory2"
+        elseif v.Text == "TurtleShell" then
+            v.Name = "9".."Accessory2"
+        elseif v.Text == "StrawHat" then
+            v.Name = "10".."Accessory2"
+        elseif v.Text == "Snowflake Cloak" then
+            v.Name = "11".."Accessory2"
+        elseif v.Text == "White Headband" then
+            v.Name = "11".."Accessory2"
+        elseif v.Text == "Midnight Rider Shades" then
+            v.Name = "12".."Accessory2"
+        elseif v.Text == "Great Detective Fedora" then
+            v.Name = "13".."Accessory2"
+        elseif v.Text == "Nomadic Steampunk Headband" then
+            v.Name = "14".."Accessory2"
+        elseif v.Text == "PiccoloHat" then
+            v.Name = "15".."Accessory2"
+        elseif v.Text == "Sleek Glasses" then
+            v.Name = "16".."Accessory2"
+        elseif v.Text == "Evil Aura" then
+            v.Name = "17".."Accessory2"
+        elseif v.Text == "Grn Scouter" then
+            v.Name = "18".."Accessory2"
+        elseif v.Text == "WhiteChillCap" then
+            v.Name = "19".."Accessory2"
+        elseif v.Text == "Ylw Scouter" then
+            v.Name = "20".."Accessory2"
+        elseif v.Text == "TopHat" then
+            v.Name = "21".."Accessory2"
+        elseif v.Text == "Epic Glasses" then
+            v.Name = "22".."Accessory2"
+        elseif v.Text == "Valkyrie Helm" then
+            v.Name = "23".."Accessory2"
+        elseif v.Text == "Fedora" then
+            v.Name = "24".."Accessory2"
+        elseif v.Text == "Floating  White Crown" then
+            v.Name = "25".."Accessory2"
+        elseif v.Text == "Red Headband" then
+            v.Name = "26".."Accessory2"
+        elseif v.Text == "Blue Scouter" then
+            v.Name = "27".."Accessory2"
+        elseif v.Text == "potara" then
+            v.Name = "28".."Accessory2"
+        elseif v.Text == "Nerd Glasses" then
+            v.Name = "29".."Accessory2"
+        elseif v.Text == "DisguiseScarf" then
+            v.Name = "30".."Accessory2"
+        elseif v.Text == "Zamasu Halo" then
+            v.Name = "31".."Accessory2"
+        elseif v.Text == "Visor" then
+            v.Name = "32".."Accessory2"
+        elseif v.Text == "BigGlasses" then
+            v.Name = "33".."Accessory2"
+        elseif v.Text == "Floating Crown" then
+            v.Name = "34".."Accessory2"
+        elseif v.Text == "Halo" then
+            v.Name = "35".."Accessory2"
+        elseif v.Text == "None" then
+            v.Name = "36".."Accessory2"
+        elseif v.Text == "time breaker" then
+            v.Name = "37".."Accessory2"
+        elseif v.Text == "Red Scouter" then
+            v.Name = "38".."Accessory2"
+        elseif v.Text == "Little Jiren" then
+            v.Name = "39".."Accessory2"
+        elseif v.Text == "Round Glasses" then
+            v.Name = "40".."Accessory2"
+        elseif v.Text == "Buddy Hat" then
+            v.Name = "41".."Accessory2"
+        elseif v.Text == "Ylw Headband" then
+            v.Name = "42".."Accessory2"
+        elseif v.Text == "Cool Glasses" then
+            v.Name = "43".."Accessory2"
+        elseif v.Text == "Green Headband" then
+            v.Name = "44".."Accessory2"
+        elseif v.Text == "Purple Headband" then
+            v.Name = "45".."Accessory2"
+        elseif v.Text == "Style Glasses" then
+            v.Name = "46".."Accessory2"
+        elseif v.Text == "DisguiseScarf White" then
+            v.Name = "47".."Accessory2"
+        end
+    end
+end
+
+-- Equip Random Accessories
+game:GetService("RunService").RenderStepped:connect(function()
+    wait(.5)
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,47).."Accessory")}
+    AccEquip:FireServer(unpack(args))
+    wait()
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,47).."Accessory2")}
+    AccEquip:FireServer(unpack(args))
+end)
+
+-- Off (Hard Reset)
+else game.Players.LocalPlayer.Character:BreakJoints()
+end
+end
+function RandomAccessory2()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "System Lazarus";
+		Text = "Random Accessory Enabled.";
+    })
+end
+Player.Chatted:connect(function(cht)
+    if cht:match(prefix.."randomaccessory") then
+        RandomAccessory1()
+        RandomAccessory2()
+    end
+end)
+
+function RandomClothesAccessory1()
+-- Settings
+RandomClothesAccessory = true
+
+-- Loading
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end;
+repeat
+    game:GetService("RunService").RenderStepped:Wait();
+until game.Players.LocalPlayer;
+
+-- Variables
+local HUD = game.Players.LocalPlayer.PlayerGui.HUD
+local Bottom = HUD.Bottom
+local ServerTraits = game.Players.LocalPlayer.Backpack.ServerTraits
+local LoadClothes = ServerTraits.LoadClothes
+local AccEquip = ServerTraits.AccEquip
+local ScrollingFrame = HUD.ScrollingFrame
+
+if RandomClothesAccessory then
+-- Enable And Hide Guis
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Shirt")}
+LoadClothes:FireServer(unpack(args))
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Pants")}
+LoadClothes:FireServer(unpack(args))
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Accessory")}
+LoadClothes:FireServer(unpack(args))
+local args = {[1] = Bottom:WaitForChild("Character"):WaitForChild("Accessory2")}
+LoadClothes:FireServer(unpack(args))
+repeat wait() until HUD:FindFirstChild("ScrollingFrame")
+wait(2)
+ScrollingFrame.Visible = false
+
+-- Cloths Name Changer
+for i,v in pairs(ScrollingFrame:GetDescendants()) do
+    -- All Pants
+    if v.Name == 'Pants' then
+        if v.Text == "King Vegeta" then
+            v.Name = "1".."Pants"
+        elseif v.Text == "Adult Gohan" then
+            v.Name = "2".."Pants"
+        elseif v.Text == "Aqua Gi" then
+            v.Name = "3".."Pants"
+        elseif v.Text == "Purple Suit" then
+            v.Name = "4".."Pants"
+        elseif v.Text == "Trunks Again" then
+            v.Name = "5".."Pants"
+        elseif v.Text == "Natsu D" then
+            v.Name = "6".."Pants"
+        elseif v.Text == "Kai Pants" then
+            v.Name = "7".."Pants"
+        elseif v.Text == "Torn Purple Gi" then
+            v.Name = "8".."Pants"
+        elseif v.Text == "Torn Gi" then
+            v.Name = "9".."Pants"
+        elseif v.Text == "Majin Buu" then
+            v.Name = "10".."Pants"
+        elseif v.Text == "FemaleMajin2 pants" then
+            v.Name = "11".."Pants"
+        elseif v.Text == "Son Goten DBS" then
+            v.Name = "11".."Pants"
+        elseif v.Text == "Orange Gi" then
+            v.Name = "12".."Pants"
+        elseif v.Text == "Femalesaiyan3 pants" then
+            v.Name = "13".."Pants"
+        elseif v.Text == "Kira" then
+            v.Name = "14".."Pants"
+        elseif v.Text == "GodOfDestruction" then
+            v.Name = "15".."Pants"
+        elseif v.Text == "Saiyan Armor Green Top" then
+            v.Name = "16".."Pants"
+        elseif v.Text == "Gotenks" then
+            v.Name = "17".."Pants"
+        elseif v.Text == "Femalesaiyan1 pants" then
+            v.Name = "18".."Pants"
+        elseif v.Text == "Vegeta Dress Suit(Dragon Ball Super)" then
+            v.Name = "19".."Pants"
+        elseif v.Text == "Track Suit" then
+            v.Name = "20".."Pants"
+        elseif v.Text == "Trunks Pants" then
+            v.Name = "21".."Pants"
+        elseif v.Text == "Tapion Bottom" then
+            v.Name = "22".."Pants"
+        elseif v.Text == "Dragon Clan Pants" then
+            v.Name = "23".."Pants"
+        elseif v.Text == "Ultra Instinct Goku" then
+            v.Name = "24".."Pants"
+        elseif v.Text == "Gi Hunna (Bottom)" then
+            v.Name = "25".."Pants"
+        elseif v.Text == "Epic Pants" then
+            v.Name = "26".."Pants"
+        elseif v.Text == "Dragon Ball - Supreme Kai" then
+            v.Name = "27".."Pants"
+        elseif v.Text == "Red Saiyan Armor Bottom" then
+            v.Name = "28".."Pants"
+        elseif v.Text == "Android 18" then
+            v.Name = "29".."Pants"
+        elseif v.Text == "JO JO" then
+            v.Name = "30".."Pants"
+        elseif v.Text == "Arcosian" then
+            v.Name = "31".."Pants"
+        elseif v.Text == "HitClothes" then
+            v.Name = "32".."Pants"
+        elseif v.Text == "Master Roshi" then
+            v.Name = "33".."Pants"
+        elseif v.Text == "Universe 6 Namekian" then
+            v.Name = "34".."Pants"
+        elseif v.Text == "Black Goku Top" then
+            v.Name = "35".."Pants"
+        elseif v.Text == "Grey Jacket" then
+            v.Name = "36".."Pants"
+        elseif v.Text == "Android 1-Xp" then
+            v.Name = "37".."Pants"
+        elseif v.Text == "Saiyan Armor Pants" then
+            v.Name = "38".."Pants"
+        elseif v.Text == 'Saiyan Armor Pants "Jade"' then
+            v.Name = "39".."Pants"
+        elseif v.Text == "Android 16" then
+            v.Name = "40".."Pants"
+        elseif v.Text == 'Saiyan Armor Pants "Navy"' then
+            v.Name = "41".."Pants"
+        elseif v.Text == "Bardock (Damaged)" then
+            v.Name = "42".."Pants"
+        elseif v.Text == "C00l Pants" then
+            v.Name = "43".."Pants"
+        elseif v.Text == "Argus Universe 88 (Jumpsuit) [Pants]" then
+            v.Name = "44".."Pants"
+        elseif v.Text == "Crane Pants" then
+            v.Name = "45".."Pants"
+        elseif v.Text == "Gohan(Kid)" then
+            v.Name = "46".."Pants"
+        elseif v.Text == "Custom Scientist" then
+            v.Name = "47".."Pants"
+        elseif v.Text == "Vegeta Buu Saga" then
+            v.Name = "48".."Pants"
+        elseif v.Text == "Pride Troopers (Muscles) - Dragon Ball Super" then
+            v.Name = "49".."Pants"
+        elseif v.Text == "Tambourine" then
+            v.Name = "50".."Pants"
+        elseif v.Text == "Sun Wukongp" then
+            v.Name = "51".."Pants"
+        elseif v.Text == "Vegito Pants" then
+            v.Name = "52".."Pants"
+        elseif v.Text == "Kefla Fusion" then
+            v.Name = "53".."Pants"
+        elseif v.Text == "Beat" then
+            v.Name = "54".."Pants"
+        elseif v.Text == "Orange & Blue Gi Bottom" then
+            v.Name = "55".."Pants"
+        elseif v.Text == "Kid buu" then
+            v.Name = "56".."Pants"
+        elseif v.Text == "Vegerut" then
+            v.Name = "57".."Pants"
+        elseif v.Text == "Beerus" then
+            v.Name = "58".."Pants"
+        elseif v.Text == "Adult Gohan GiS" then
+            v.Name = "59".."Pants"
+        elseif v.Text == "Caulifla(Dragon Ball Super) pants" then
+            v.Name = "60".."Pants"
+        elseif v.Text == "Cabba" then
+            v.Name = "61".."Pants"
+        elseif v.Text == "Goku Dragon Ball Super" then
+            v.Name = "62".."Pants"
+        elseif v.Text == "Majin Female Top" then
+            v.Name = "63".."Pants"
+        elseif v.Text == "Jeans" then
+            v.Name = "64".."Pants"
+        elseif v.Text == "Androide 17 DBZ" then
+            v.Name = "65".."Pants"
+        elseif v.Text == "Purple Gi" then
+            v.Name = "66".."Pants"
+        elseif v.Text == "Turles )" then
+            v.Name = "67".."Pants"
+        elseif v.Text == "Future Trunks [DBS]" then
+            v.Name = "68".."Pants"
+        elseif v.Text == "Teen Herop" then
+            v.Name = "69".."Pants"
+        elseif v.Text == "Femalesaiyan2 pants" then
+            v.Name = "70".."Pants"
+        elseif v.Text == "Goten" then
+            v.Name = "71".."Pants"
+        elseif v.Text == "Uub" then
+            v.Name = "72".."Pants"
+        elseif v.Text == "Black Suit" then
+            v.Name = "73".."Pants"
+        elseif v.Text == "None" then
+            v.Name = "74".."Pants"
+        elseif v.Text == "Android 17 Super" then
+            v.Name = "75".."Pants"
+        elseif v.Text == "Galactic Patrol" then
+            v.Name = "76".."Pants"
+        elseif v.Text == "Otamot Jumpsuit (Bottom)" then
+            v.Name = "77".."Pants"
+        elseif v.Text == "Bocage Universe 88 [Pants]" then
+            v.Name = "78".."Pants"
+        elseif v.Text == "TC Armor" then
+            v.Name = "79".."Pants"
+        elseif v.Text == "Saiyan Armor" then
+            v.Name = "80".."Pants"
+        elseif v.Text == "FemaleMajin3 pants" then
+            v.Name = "81".."Pants"
+        elseif v.Text == "Goku Kid GT" then
+            v.Name = "82".."Pants"
+        elseif v.Text == "Pirate Pahroah" then
+            v.Name = "83".."Pants"
+        elseif v.Text == "Vegerut's Geeeee" then
+            v.Name = "84".."Pants"
+        elseif v.Text == "Black Pants" then
+            v.Name = "85".."Pants"
+        elseif v.Text == "Demon" then
+            v.Name = "86".."Pants"
+        elseif v.Text == "Kale(Dragon Ball Super) pants" then
+            v.Name = "87".."Pants"
+        elseif v.Text == "Argus Universe 88 [Pants]" then
+            v.Name = "88".."Pants"
+        elseif v.Text == "Vegeta DBS" then
+            v.Name = "89".."Pants"
+        elseif v.Text == "Gogeta" then
+            v.Name = "90".."Pants"
+        elseif v.Text == "Gi Brandon (Bottom)" then
+            v.Name = "91".."Pants"
+        elseif v.Text == "Namekian Cosplay" then
+            v.Name = "92".."Pants"
+        elseif v.Text == "Goku Black 2" then
+            v.Name = "93".."Pants"
+        end
+        -- All Shirts
+    elseif v.Name == "Shirt" then
+        if v.Text == "King Vegeta" then
+            v.Name = "1".."Shirt"
+        elseif v.Text == "Adult Gohan" then
+            v.Name = "2".."Shirt"
+        elseif v.Text == "Aqua Gi" then
+            v.Name = "3".."Shirt"
+        elseif v.Text == "Purple Suit" then
+            v.Name = "4".."Shirt"
+        elseif v.Text == "Trunks Again" then
+            v.Name = "5".."Shirt"
+        elseif v.Text == "Saiyan Armor Blue" then
+            v.Name = "6".."Shirt"
+        elseif v.Text == "Natsu D" then
+            v.Name = "7".."Shirt"
+        elseif v.Text == "Saiyan Armor V9" then
+            v.Name = "8".."Shirt"
+        elseif v.Text == "Pink Training Top" then
+            v.Name = "9".."Shirt"
+        elseif v.Text == "Crane School Uniforms" then
+            v.Name = "10".."Shirt"
+        elseif v.Text == "Blue Training Top" then
+            v.Name = "11".."Shirt"
+        elseif v.Text == "Vegito" then
+            v.Name = "12".."Shirt"
+        elseif v.Text == "Vanir - Blue Gradient Hoodie" then
+            v.Name = "13".."Shirt"
+        elseif v.Text == "Torn Purple Gi" then
+            v.Name = "14".."Shirt"
+        elseif v.Text == "Torn Gi" then
+            v.Name = "15".."Shirt"
+        elseif v.Text == "Majin Buu" then
+            v.Name = "16".."Shirt"
+        elseif v.Text == "Black Tank" then
+            v.Name = "17".."Shirt"
+        elseif v.Text == "BROLY" then
+            v.Name = "18".."Shirt"
+        elseif v.Text == "Son Goten DBS" then
+            v.Name = "19".."Shirt"
+        elseif v.Text == "Goku UnderShirt Top [Muscles]" then
+            v.Name = "20".."Shirt"
+        elseif v.Text == "Aqua Training Top" then
+            v.Name = "21".."Shirt"
+        elseif v.Text == "Kira" then
+            v.Name = "22".."Shirt"
+        elseif v.Text == "Green Training Top" then
+            v.Name = "23".."Shirt"
+        elseif v.Text == "Zamasu Black Fusion DBS" then
+            v.Name = "24".."Shirt"
+        elseif v.Text == "GodOfDestruction" then
+            v.Name = "25".."Shirt"
+        elseif v.Text == "Saiyan Armor Green Top" then
+            v.Name = "26".."Shirt"
+        elseif v.Text == "Gotenks" then
+            v.Name = "27".."Shirt"
+        elseif v.Text == "Femalesaiyan1" then
+            v.Name = "28".."Shirt"
+        elseif v.Text == "Goku(Dragon Ball GT) Adult" then
+            v.Name = "29".."Shirt"
+        elseif v.Text == "Vegeta Dress Suit(Dragon Ball Super)" then
+            v.Name = "30".."Shirt"
+        elseif v.Text == "Goku's Jacket" then
+            v.Name = "31".."Shirt"
+        elseif v.Text == "Track Suit" then
+            v.Name = "32".."Shirt"
+        elseif v.Text == "Gi Brandon (Top)" then
+            v.Name = "33".."Shirt"
+        elseif v.Text == "Real Bulk" then
+            v.Name = "34".."Shirt"
+        elseif v.Text == "Ultra Instinct Goku" then
+            v.Name = "35".."Shirt"
+        elseif v.Text == "Dragon Ball - Supreme Kai" then
+            v.Name = "36".."Shirt"
+        elseif v.Text == "Argus Universe 88 (Jumpsuit) [Top] v2" then
+            v.Name = "37".."Shirt"
+        elseif v.Text == "Android 18" then
+            v.Name = "38".."Shirt"
+        elseif v.Text == "Vegeta BADMAN Shirt" then
+            v.Name = "39".."Shirt"
+        elseif v.Text == "JO JO" then
+            v.Name = "40".."Shirt"
+        elseif v.Text == "Mirai Trunks (No Strap)" then
+            v.Name = "41".."Shirt"
+        elseif v.Text == "Kale(Dragon Ball Super)" then
+            v.Name = "42".."Shirt"
+        elseif v.Text == "Arcosian" then
+            v.Name = "43".."Shirt"
+        elseif v.Text == "FemaleMajin3" then
+            v.Name = "44".."Shirt"
+        elseif v.Text == "HitClothes" then
+            v.Name = "45".."Shirt"
+        elseif v.Text == "Master Roshi" then
+            v.Name = "46".."Shirt"
+        elseif v.Text == "Black Goku Top" then
+            v.Name = "47".."Shirt"
+        elseif v.Text == "Caulifla(Dragon Ball Super)" then
+            v.Name = "48".."Shirt"
+        elseif v.Text == "Grey Jacket" then
+            v.Name = "49".."Shirt"
+        elseif v.Text == "Red Whis' Gi" then
+            v.Name = "50".."Shirt"
+        elseif v.Text == "Otamot Jumpsuit (Top)" then
+            v.Name = "51".."Shirt"
+        elseif v.Text == "dragon clan" then
+            v.Name = "52".."Shirt"
+        elseif v.Text == "Saitama" then
+            v.Name = "53".."Shirt"
+        elseif v.Text == "Android 16" then
+            v.Name = "54".."Shirt"
+        elseif v.Text == "Black Saiyan" then
+            v.Name = "55".."Shirt"
+        elseif v.Text == "Black Bandages" then
+            v.Name = "56".."Shirt"
+        elseif v.Text == "Femalesaiyan3" then
+            v.Name = "57".."Shirt"
+        elseif v.Text == "Teen Hero" then
+            v.Name = "58".."Shirt"
+        elseif v.Text == "Dio Tank" then
+            v.Name = "59".."Shirt"
+        elseif v.Text == "Goku Time Patrol" then
+            v.Name = "60".."Shirt"
+        elseif v.Text == "Gohan(Kid)" then
+            v.Name = "61".."Shirt"
+        elseif v.Text == "Custom Scientist" then
+            v.Name = "62".."Shirt"
+        elseif v.Text == "Tapion Top" then
+            v.Name = "63".."Shirt"
+        elseif v.Text == "Vegeta Buu Saga" then
+            v.Name = "64".."Shirt"
+        elseif v.Text == "Wifebeater" then
+            v.Name = "65".."Shirt"
+        elseif v.Text == "Android 1-X" then
+            v.Name = "66".."Shirt"
+        elseif v.Text == "Tien Shinhan" then
+            v.Name = "67".."Shirt"
+        elseif v.Text == "Dio Jacket" then
+            v.Name = "68".."Shirt"
+        elseif v.Text == "Gi Hunna (Top)" then
+            v.Name = "69".."Shirt"
+        elseif v.Text == "Red Training Top" then
+            v.Name = "70".."Shirt"
+        elseif v.Text == "Pride Troopers (Muscles) - Dragon Ball Super" then
+            v.Name = "71".."Shirt"
+        elseif v.Text == "Tambourine" then
+            v.Name = "72".."Shirt"
+        elseif v.Text == "Yamcha (Desert Bandit)" then
+            v.Name = "73".."Shirt"
+        elseif v.Text == "Female Majin 2" then
+            v.Name = "74".."Shirt"
+        elseif v.Text == "Kefla Fusion" then
+            v.Name = "75".."Shirt"
+        elseif v.Text == "Beat" then
+            v.Name = "76".."Shirt"
+        elseif v.Text == "Orange & Blue Gi Bottom" then
+            v.Name = "77".."Shirt"
+        elseif v.Text == "Kid buu" then
+            v.Name = "78".."Shirt"
+        elseif v.Text == "GT Goku Top [SSJ4]" then
+            v.Name = "79".."Shirt"
+        elseif v.Text == "Male Majin Tank Top" then
+            v.Name = "80".."Shirt"
+        elseif v.Text == "Vegerut" then
+            v.Name = "81".."Shirt"
+        elseif v.Text == "Beerus" then
+            v.Name = "82".."Shirt"
+        elseif v.Text == "Adult Gohan GiS" then
+            v.Name = "83".."Shirt"
+        elseif v.Text == "Saiyan Armor Prpl" then
+            v.Name = "84".."Shirt"
+        elseif v.Text == "Cabba" then
+            v.Name = "85".."Shirt"
+        elseif v.Text == "Goku Dragon Ball Super" then
+            v.Name = "86".."Shirt"
+        elseif v.Text == "Majin Female Top" then
+            v.Name = "87".."Shirt"
+        elseif v.Text == "Androide 17 DBZ" then
+            v.Name = "88".."Shirt"
+        elseif v.Text == "Purple Gi" then
+            v.Name = "89".."Shirt"
+        elseif v.Text == "Kadock Armor [Top]" then
+            v.Name = "90".."Shirt"
+        elseif v.Text == "School Outfit" then
+            v.Name = "91".."Shirt"
+        elseif v.Text == "Future Trunks [DBS]" then
+            v.Name = "92".."Shirt"
+        elseif v.Text == "Grey Training Top" then
+            v.Name = "93".."Shirt"
+        elseif v.Text == "Goten" then
+            v.Name = "94".."Shirt"
+        elseif v.Text == "Uub" then
+            v.Name = "95".."Shirt"
+        elseif v.Text == "Yellow Training Top" then
+            v.Name = "96".."Shirt"
+        elseif v.Text == "Argus [Top]" then
+            v.Name = "97".."Shirt"
+        elseif v.Text == "Black Training Top" then
+            v.Name = "98".."Shirt"
+        elseif v.Text == "Black Suit" then
+            v.Name = "99".."Shirt"
+        elseif v.Text == 'Elite Saiyan Armor "Jade"' then
+            v.Name = "100".."Shirt"
+        elseif v.Text == "None" then
+            v.Name = "101".."Shirt"
+        elseif v.Text == "Arm Bandages" then
+            v.Name = "102".."Shirt"
+        elseif v.Text == "Android 17 Super" then
+            v.Name = "103".."Shirt"
+        elseif v.Text == "Bardock" then
+            v.Name = "104".."Shirt"
+        elseif v.Text == "Femalesaiyan2" then
+            v.Name = "105".."Shirt"
+        elseif v.Text == "Galactic Patrol" then
+            v.Name = "106".."Shirt"
+        elseif v.Text == "TC Armor" then
+            v.Name = "107".."Shirt"
+        elseif v.Text == "Saiyan Armor" then
+            v.Name = "108".."Shirt"
+        elseif v.Text == "Future  Sweater" then
+            v.Name = "109".."Shirt"
+        elseif v.Text == "Goku Kid GT" then
+            v.Name = "110".."Shirt"
+        elseif v.Text == "Sun Wukong" then
+            v.Name = "111".."Shirt"
+        elseif v.Text == "Pirate Pahroah" then
+            v.Name = "112".."Shirt"
+        elseif v.Text == "Vegerut's Geeeee" then
+            v.Name = "113".."Shirt"
+        elseif v.Text == "Gohan Top [Future]" then
+            v.Name = "114".."Shirt"
+        elseif v.Text == "Demon" then
+            v.Name = "115".."Shirt"
+        elseif v.Text == "Bocage Universe 88 [Top]" then
+            v.Name = "116".."Shirt"
+        elseif v.Text == "Saiyan Armor Dk Blue" then
+            v.Name = "117".."Shirt"
+        elseif v.Text == "The Great Saiyaman" then
+            v.Name = "118".."Shirt"
+        elseif v.Text == "Vegeta DBS" then
+            v.Name = "119".."Shirt"
+        elseif v.Text == "Gogeta" then
+            v.Name = "120".."Shirt"
+        elseif v.Text == "Namekian Cosplay" then
+            v.Name = "121".."Shirt"
+        elseif v.Text == "Goku Black 2" then
+            v.Name = "122".."Shirt"
+        end
+        -- All Accessories
+    elseif v.Name == 'Accessory' then
+        if v.Text == "Black Headband" then
+            v.Name = "1".."Accessory"
+        elseif v.Text == "Paper Hat" then
+            v.Name = "2".."Accessory"
+        elseif v.Text == "Bunny Accessory" then
+            v.Name = "3".."Accessory"
+        elseif v.Text == "Great Detective Cape" then
+            v.Name = "4".."Accessory"
+        elseif v.Text == "Tail" then
+            v.Name = "5".."Accessory"
+        elseif v.Text == "Punk Kid" then
+            v.Name = "6".."Accessory"
+        elseif v.Text == "PiccoloCape" then
+            v.Name = "7".."Accessory"
+        elseif v.Text == "Gray Assassin" then
+            v.Name = "8".."Accessory"
+        elseif v.Text == "TurtleShell" then
+            v.Name = "9".."Accessory"
+        elseif v.Text == "StrawHat" then
+            v.Name = "10".."Accessory"
+        elseif v.Text == "Snowflake Cloak" then
+            v.Name = "11".."Accessory"
+        elseif v.Text == "White Headband" then
+            v.Name = "11".."Accessory"
+        elseif v.Text == "Midnight Rider Shades" then
+            v.Name = "12".."Accessory"
+        elseif v.Text == "Great Detective Fedora" then
+            v.Name = "13".."Accessory"
+        elseif v.Text == "Nomadic Steampunk Headband" then
+            v.Name = "14".."Accessory"
+        elseif v.Text == "PiccoloHat" then
+            v.Name = "15".."Accessory"
+        elseif v.Text == "Sleek Glasses" then
+            v.Name = "16".."Accessory"
+        elseif v.Text == "Evil Aura" then
+            v.Name = "17".."Accessory"
+        elseif v.Text == "Grn Scouter" then
+            v.Name = "18".."Accessory"
+        elseif v.Text == "WhiteChillCap" then
+            v.Name = "19".."Accessory"
+        elseif v.Text == "Ylw Scouter" then
+            v.Name = "20".."Accessory"
+        elseif v.Text == "TopHat" then
+            v.Name = "21".."Accessory"
+        elseif v.Text == "Epic Glasses" then
+            v.Name = "22".."Accessory"
+        elseif v.Text == "Valkyrie Helm" then
+            v.Name = "23".."Accessory"
+        elseif v.Text == "Fedora" then
+            v.Name = "24".."Accessory"
+        elseif v.Text == "Floating  White Crown" then
+            v.Name = "25".."Accessory"
+        elseif v.Text == "Red Headband" then
+            v.Name = "26".."Accessory"
+        elseif v.Text == "Blue Scouter" then
+            v.Name = "27".."Accessory"
+        elseif v.Text == "potara" then
+            v.Name = "28".."Accessory"
+        elseif v.Text == "Nerd Glasses" then
+            v.Name = "29".."Accessory"
+        elseif v.Text == "DisguiseScarf" then
+            v.Name = "30".."Accessory"
+        elseif v.Text == "Zamasu Halo" then
+            v.Name = "31".."Accessory"
+        elseif v.Text == "Visor" then
+            v.Name = "32".."Accessory"
+        elseif v.Text == "BigGlasses" then
+            v.Name = "33".."Accessory"
+        elseif v.Text == "Floating Crown" then
+            v.Name = "34".."Accessory"
+        elseif v.Text == "Halo" then
+            v.Name = "35".."Accessory"
+        elseif v.Text == "None" then
+            v.Name = "36".."Accessory"
+        elseif v.Text == "time breaker" then
+            v.Name = "37".."Accessory"
+        elseif v.Text == "Red Scouter" then
+            v.Name = "38".."Accessory"
+        elseif v.Text == "Little Jiren" then
+            v.Name = "39".."Accessory"
+        elseif v.Text == "Round Glasses" then
+            v.Name = "40".."Accessory"
+        elseif v.Text == "Buddy Hat" then
+            v.Name = "41".."Accessory"
+        elseif v.Text == "Ylw Headband" then
+            v.Name = "42".."Accessory"
+        elseif v.Text == "Cool Glasses" then
+            v.Name = "43".."Accessory"
+        elseif v.Text == "Green Headband" then
+            v.Name = "44".."Accessory"
+        elseif v.Text == "Purple Headband" then
+            v.Name = "45".."Accessory"
+        elseif v.Text == "Style Glasses" then
+            v.Name = "46".."Accessory"
+        elseif v.Text == "DisguiseScarf White" then
+            v.Name = "47".."Accessory"
+        end
+        -- All Accessories2
+    elseif v.Name == 'Accessory2' then
+        if v.Text == "Black Headband" then
+            v.Name = "1".."Accessory2"
+        elseif v.Text == "Paper Hat" then
+            v.Name = "2".."Accessory2"
+        elseif v.Text == "Bunny Accessory" then
+            v.Name = "3".."Accessory2"
+        elseif v.Text == "Great Detective Cape" then
+            v.Name = "4".."Accessory2"
+        elseif v.Text == "Tail" then
+            v.Name = "5".."Accessory2"
+        elseif v.Text == "Punk Kid" then
+            v.Name = "6".."Accessory2"
+        elseif v.Text == "PiccoloCape" then
+            v.Name = "7".."Accessory2"
+        elseif v.Text == "Gray Assassin" then
+            v.Name = "8".."Accessory2"
+        elseif v.Text == "TurtleShell" then
+            v.Name = "9".."Accessory2"
+        elseif v.Text == "StrawHat" then
+            v.Name = "10".."Accessory2"
+        elseif v.Text == "Snowflake Cloak" then
+            v.Name = "11".."Accessory2"
+        elseif v.Text == "White Headband" then
+            v.Name = "11".."Accessory2"
+        elseif v.Text == "Midnight Rider Shades" then
+            v.Name = "12".."Accessory2"
+        elseif v.Text == "Great Detective Fedora" then
+            v.Name = "13".."Accessory2"
+        elseif v.Text == "Nomadic Steampunk Headband" then
+            v.Name = "14".."Accessory2"
+        elseif v.Text == "PiccoloHat" then
+            v.Name = "15".."Accessory2"
+        elseif v.Text == "Sleek Glasses" then
+            v.Name = "16".."Accessory2"
+        elseif v.Text == "Evil Aura" then
+            v.Name = "17".."Accessory2"
+        elseif v.Text == "Grn Scouter" then
+            v.Name = "18".."Accessory2"
+        elseif v.Text == "WhiteChillCap" then
+            v.Name = "19".."Accessory2"
+        elseif v.Text == "Ylw Scouter" then
+            v.Name = "20".."Accessory2"
+        elseif v.Text == "TopHat" then
+            v.Name = "21".."Accessory2"
+        elseif v.Text == "Epic Glasses" then
+            v.Name = "22".."Accessory2"
+        elseif v.Text == "Valkyrie Helm" then
+            v.Name = "23".."Accessory2"
+        elseif v.Text == "Fedora" then
+            v.Name = "24".."Accessory2"
+        elseif v.Text == "Floating  White Crown" then
+            v.Name = "25".."Accessory2"
+        elseif v.Text == "Red Headband" then
+            v.Name = "26".."Accessory2"
+        elseif v.Text == "Blue Scouter" then
+            v.Name = "27".."Accessory2"
+        elseif v.Text == "potara" then
+            v.Name = "28".."Accessory2"
+        elseif v.Text == "Nerd Glasses" then
+            v.Name = "29".."Accessory2"
+        elseif v.Text == "DisguiseScarf" then
+            v.Name = "30".."Accessory2"
+        elseif v.Text == "Zamasu Halo" then
+            v.Name = "31".."Accessory2"
+        elseif v.Text == "Visor" then
+            v.Name = "32".."Accessory2"
+        elseif v.Text == "BigGlasses" then
+            v.Name = "33".."Accessory2"
+        elseif v.Text == "Floating Crown" then
+            v.Name = "34".."Accessory2"
+        elseif v.Text == "Halo" then
+            v.Name = "35".."Accessory2"
+        elseif v.Text == "None" then
+            v.Name = "36".."Accessory2"
+        elseif v.Text == "time breaker" then
+            v.Name = "37".."Accessory2"
+        elseif v.Text == "Red Scouter" then
+            v.Name = "38".."Accessory2"
+        elseif v.Text == "Little Jiren" then
+            v.Name = "39".."Accessory2"
+        elseif v.Text == "Round Glasses" then
+            v.Name = "40".."Accessory2"
+        elseif v.Text == "Buddy Hat" then
+            v.Name = "41".."Accessory2"
+        elseif v.Text == "Ylw Headband" then
+            v.Name = "42".."Accessory2"
+        elseif v.Text == "Cool Glasses" then
+            v.Name = "43".."Accessory2"
+        elseif v.Text == "Green Headband" then
+            v.Name = "44".."Accessory2"
+        elseif v.Text == "Purple Headband" then
+            v.Name = "45".."Accessory2"
+        elseif v.Text == "Style Glasses" then
+            v.Name = "46".."Accessory2"
+        elseif v.Text == "DisguiseScarf White" then
+            v.Name = "47".."Accessory2"
+        end
+    end
+end
+
+-- Equip Random Clothes
+game:GetService("RunService").Stepped:connect(function()
+    wait(.5)
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,122).."Shirt")}
+    AccEquip:FireServer(unpack(args))
+    wait()
+    for i = 1, 2 do
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,93).."Pants")}
+    AccEquip:FireServer(unpack(args))
+    end
+    wait()
+    for i = 1, 2 do
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,47).."Accessory")}
+    AccEquip:FireServer(unpack(args))
+    end
+    wait()
+    for i = 1, 2 do
+    local args = {[1] = ScrollingFrame:WaitForChild(math.random(1,47).."Accessory2")}
+    AccEquip:FireServer(unpack(args))
+    end
+end)
+
+-- Off (Hard Reset)
+else game.Players.LocalPlayer.Character:BreakJoints()
+end
+end
+function RandomClothesAccessory2()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "System Lazarus";
+		Text = "Random All Enabled.";
+    })
+end
+Player.Chatted:connect(function(cht)
+    if cht:match(prefix.."randomall") then
+        RandomClothesAccessory1()
+        RandomClothesAccessory2()
     end
 end)
 
 function OffRandomClothes1()
     local Char = game.Players.LocalPlayer.Character
     RandomCloth = false
+    RandomAccessory = false
+    RandomClothesAccessory = false
     Char:BreakJoints()
 end
 function OffRandomClothes2()
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "System Lazarus";
-		Text = "Random Clothes Disabled.";
+		Text = "Random All Disabled.";
     })
 end
 Player.Chatted:connect(function(cht)
-    if cht:match(prefix.."offrandomclothes") or cht:match(prefix.."norandomclothes") or cht:match(prefix.."unrandomclothes") then
+    if cht:match(prefix.."offrandomall") or cht:match(prefix.."norandomall") or cht:match(prefix.."unrandomall") then
         OffRandomClothes1()
         OffRandomClothes2()
     end
