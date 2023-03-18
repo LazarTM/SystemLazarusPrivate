@@ -5031,13 +5031,14 @@ function RandomClothes2()
     })
 end
 Player.Chatted:connect(function(cht)
-    if cht:match(prefix.."randomclothes") then
+    if cht:match(prefix.."randomclothes") or cht:match(prefix.."rc") then
         RandomClothes1()
         RandomClothes2()
     end
 end)
 
 function OffRandomClothes1()
+    local Char = game.Players.LocalPlayer.Character
     RandomCloth = false
     Char:BreakJoints()
 end
