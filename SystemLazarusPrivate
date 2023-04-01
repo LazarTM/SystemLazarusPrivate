@@ -179,6 +179,7 @@ local cmd107 = "randomclothes"
 local cmd108 = "randomaccessory"
 local cmd109 = "randomall"
 local cmd110 = "offrandomall norandomall unrandomall"
+local cmd111 = "grespawn gres"
 ]]--
 
 -- loadstring(game:HttpGet('https://raw.githubusercontent.com/LazarTM/PrintCMDS/main/PrintLazarusCMDS'))() --
@@ -2605,7 +2606,6 @@ if game.PlaceId == 536102540 then
             end
         end)
         Lplr.PlayerGui:WaitForChild("Setup").Frame.Side.Visible = false
-        wait(0.9)
         Lplr.Backpack.HairScript.RemoteEvent:FireServer("woah")
     else
     Char:BreakJoints()
@@ -2625,6 +2625,46 @@ Player.Chatted:connect(function(cht)
 	if cht:match(prefix.."respawn") or cht:match(prefix.."res") then
 		respawn2()
 		respawn()
+	end
+end)
+
+function glitchrespawn()
+local race = game.Players.LocalPlayer.Character.Race.Value;
+local Lplr = game.Players.LocalPlayer
+local Char = Lplr.Character
+if game.PlaceId == 536102540 then
+    if race == "Android" or (race == "Saiyan") or (race == "Human") then
+        getgenv().oldcframe = Char.HumanoidRootPart.CFrame
+        Lplr.Backpack:WaitForChild("ServerTraits").ChatStart:FireServer(workspace.FriendlyNPCs:FindFirstChild("Hair Stylist"))
+        Lplr.PlayerGui:WaitForChild("HUD").Bottom.ChatGui.Opt1.Changed:connect(function(changed)
+            if changed == "Visible" then
+                for i, x in pairs(getconnections(Lplr.PlayerGui.HUD.Bottom.ChatGui.Opt1.MouseButton1Click)) do
+                    wait(.2)
+                    x.Fire()
+                end
+            end
+        end)
+        Lplr.PlayerGui:WaitForChild("Setup").Frame.Side.Visible = false
+        wait(0.9)
+        Lplr.Backpack.HairScript.RemoteEvent:FireServer("woah")
+    else
+    Char:BreakJoints()
+end
+else
+    Char:BreakJoints()
+end
+end
+function glitchrespawn2()
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "System Lazarus";
+		Text = "Glich Respawning...";
+	})
+end
+local Player = game.Players.LocalPlayer
+Player.Chatted:connect(function(cht)
+	if cht:match(prefix.."grespawn") or cht:match(prefix.."gres") then
+		glitchrespawn2()
+		glitchrespawn()
 	end
 end)
 
